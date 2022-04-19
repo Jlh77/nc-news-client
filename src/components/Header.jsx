@@ -16,10 +16,10 @@ const Header = () => {
           <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="/">
-            <li>Category 1</li>
+          <Link to="/topics/coding">
+            <li>Coding</li>
           </Link>
-          <Link to="/">
+          <Link to="/topics/cooking">
             <li>Category 2</li>
           </Link>
         </ul>
