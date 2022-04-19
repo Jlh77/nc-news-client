@@ -1,10 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../contexts/User";
 import "./Header.css";
 
 const Header = () => {
+  const { user } = useContext(UserContext);
   return (
     <div className="header-wrapper">
-      <header>NC News</header>
+      <header>
+        <h1>NC News</h1>
+        <p>Hello there, {user.username}</p>
+      </header>
       <nav className="navbar">
         <ul>
           <Link to="/">
