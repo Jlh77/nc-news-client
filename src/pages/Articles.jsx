@@ -11,10 +11,10 @@ const Articles = () => {
   const { topic } = useParams();
 
   useEffect(() => {
-    console.log(topic);
+    setIsLoading(true);
+    setErr(false);
     getArticles({ topic })
       .then((articles) => {
-        console.log(articles);
         setArticles(articles);
         setIsLoading(false);
         setErr(false);
