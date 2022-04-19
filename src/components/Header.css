@@ -1,0 +1,28 @@
+header {
+  color: red;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: red;
+}
