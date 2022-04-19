@@ -20,7 +20,10 @@ const Header = () => {
             <li>Coding</li>
           </Link>
           <Link to="/topics/cooking">
-            <li>Category 2</li>
+            <li>Cooking</li>
+          </Link>
+          <Link to="/topics/football">
+            <li>Football</li>
           </Link>
         </ul>
       </nav>
