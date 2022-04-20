@@ -16,11 +16,14 @@ const Header = () => {
           <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="/">
-            <li>Category 1</li>
+          <Link to="/topics/coding">
+            <li>Coding</li>
           </Link>
-          <Link to="/">
-            <li>Category 2</li>
+          <Link to="/topics/cooking">
+            <li>Cooking</li>
+          </Link>
+          <Link to="/topics/football">
+            <li>Football</li>
           </Link>
         </ul>
       </nav>
