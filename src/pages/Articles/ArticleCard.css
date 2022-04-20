@@ -22,6 +22,7 @@
   padding: 0.25em 0.75em;
   border-radius: 1em;
   font-size: 0.75rem;
+  margin: 10px;
 }
 
 .tag + .tag {
@@ -29,11 +30,10 @@
 }
 
 .tag-generic {
-  background: #3abd61;
-  background: linear-gradient(to bottom, #26990f, #2af32a);
+  background: #ff0000;
   color: #fafafa;
 }
-
+/*
 .tag-coding {
   background: #56ccf2;
   background: linear-gradient(to bottom, #2f80ed, #56ccf2);
@@ -48,7 +48,7 @@
   background: #cb2d3e;
   background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 }
-
+*/
 .card__body h4 {
   font-size: 1.5rem;
   text-transform: capitalize;
