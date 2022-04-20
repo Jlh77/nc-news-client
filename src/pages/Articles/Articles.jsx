@@ -20,6 +20,7 @@ const Articles = () => {
         setErr(false);
       })
       .catch((err) => {
+        setIsLoading(false);
         setErr(true);
       });
   }, [topic]);
