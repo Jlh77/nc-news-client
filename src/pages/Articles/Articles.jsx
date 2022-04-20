@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticles } from "../utils/api";
+import { getArticles } from "../../utils/api";
 import ArticleCard from "./ArticleCard";
 import "./Articles.css";
 
@@ -20,6 +20,7 @@ const Articles = () => {
         setErr(false);
       })
       .catch((err) => {
+        setIsLoading(false);
         setErr(true);
       });
   }, [topic]);
