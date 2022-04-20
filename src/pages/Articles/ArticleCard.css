@@ -1,0 +1,14 @@
+.article-card {
+  margin: 10px;
+  border: 1px solid green;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
