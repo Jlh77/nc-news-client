@@ -36,11 +36,11 @@ const Articles = () => {
   return (
     <main>
       <h1>Articles</h1>
-      <ul className="articles">
+      <section className="articles-container">
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
-      </ul>
+      </section>
     </main>
   );
 };
