@@ -15,7 +15,6 @@ const Article = () => {
     setIsLoading(true);
     getArticleById(article_id)
       .then((article) => {
-        console.log(article);
         setArticle(article);
         setIsLoading(false);
         setErr(false);
