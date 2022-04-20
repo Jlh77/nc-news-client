@@ -26,6 +26,12 @@ const Articles = () => {
 
   if (isLoading) return <p>Loading...</p>;
   if (err) return <p>Oops! Something went wrong, please try again.</p>;
+  if (!articles.length)
+    return (
+      <p>
+        Hmm, this topic doesn't seem to exist or there are no articles for it...
+      </p>
+    );
   return (
     <main>
       <h1>Articles</h1>
