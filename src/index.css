@@ -14,12 +14,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Quicksand", sans-serif;
-  display: grid;
-  place-items: center;
-  height: 100vh;
+
   background: #ebebeb; /*
   background: linear-gradient(to right, #ffffff, #ffffff);*/
-  padding-top: 160px;
+  padding-top: 205px;
   padding-bottom: 40px;
 }
 

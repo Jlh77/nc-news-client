@@ -35,7 +35,7 @@ const Articles = () => {
     );
   return (
     <main>
-      <h1>Articles</h1>
+      <h1>{topic ? topic : `All`} Articles</h1>
       <section className="articles-container">
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
