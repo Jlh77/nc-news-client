@@ -16,6 +16,7 @@
   gap: 0.5rem;
 }
 
+/*
 .tag {
   text-transform: capitalize;
   align-self: flex-start;
@@ -30,7 +31,7 @@
 }
 
 .tag-generic {
-  background: #ff0000;
+  background: #290a0a;
   color: #fafafa;
 }
 /*
@@ -73,12 +74,12 @@
   color: #666;
 }
 
-a {
+.card a {
   color: inherit;
   text-decoration: inherit;
 }
 
-a:hover {
-  color: red;
+.card a:hover {
+  color: #42caff;
   text-decoration: underline;
 }

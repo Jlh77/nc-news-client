@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
 import { getArticleById, upvoteArticleById } from "../../utils/api";
+import Comments from "./Comments";
 
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,6 +54,8 @@ const Article = () => {
         Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
         {postedOn.getFullYear()}
       </div>
+
+      <Comments article={article}></Comments>
     </article>
   );
 };
