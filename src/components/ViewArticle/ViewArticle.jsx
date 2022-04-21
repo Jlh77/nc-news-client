@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
-import { getArticleById } from "../../utils/api";
+import { getArticleById, upvoteArticleById } from "../../utils/api";
 
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +26,12 @@ const Article = () => {
       });
   }, [article_id]);
 
+  const handleUpvote = () => {
+    upvoteArticleById(article_id).then((updatedArticle) => {
+      setArticle({ ...article, votes: updatedArticle.votes });
+    });
+  };
+
   if (isLoading) return <p>Loading...</p>;
   if (err) return <p>This article does not exist, please check the URL.</p>;
   return (
@@ -36,7 +42,10 @@ const Article = () => {
         Written By: {article.author} in {article.topic}
       </p>
       <section className="comments">
-        Comment Count: {article.comment_count} Votes: {article.votes}
+        Comment Count: {article.comment_count} Votes: {article.votes}{" "}
+        <button onClick={handleUpvote}>
+          Click to Upvote! Current upvotes: {article.votes}
+        </button>
       </section>
       <div>
         Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
