@@ -38,25 +38,27 @@ const Article = () => {
   if (isLoading) return <p>Loading...</p>;
   if (err) return <p>This article does not exist, please check the URL.</p>;
   return (
-    <article className="article">
-      <h1>{article.title}</h1>
-      <p>{article.body}</p>
-      <p>
-        Written By: {article.author} in {article.topic}
-      </p>
-      <section className="comments">
-        Comment Count: {article.comment_count} Votes: {article.votes}{" "}
-        <button onClick={handleUpvote}>
-          Click to Upvote! Current upvotes: {article.votes}
-        </button>
-      </section>
-      <div>
-        Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
-        {postedOn.getFullYear()}
-      </div>
+    <>
+      <article className="article">
+        <h1>{article.title}</h1>
+        <p>{article.body}</p>
+        <p>
+          Written By: {article.author} in {article.topic}
+        </p>
+        <section className="comments">
+          Comment Count: {article.comment_count} Votes: {article.votes}{" "}
+          <button onClick={handleUpvote}>
+            Click to Upvote! Current upvotes: {article.votes}
+          </button>
+        </section>
+        <div>
+          Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
+          {postedOn.getFullYear()}
+        </div>
+      </article>
 
       <Comments article={article}></Comments>
-    </article>
+    </>
   );
 };
 export default Article;

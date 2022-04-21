@@ -9,16 +9,16 @@ const ArticleCard = ({ article }) => {
           <h4>{article.title}</h4>
         </div>
         <div className="card-body">
-          <p>{`${article.body.substring(0, 200)}...`}</p>
+          <p>{`${article.body.substring(0, 180)}...`}</p>
         </div>
       </Link>
       <div className="card__footer">
         <div className="user">
           <div className="user__info">
             <h5>By {article.author}</h5>
-            <span className={`tag tag-generic tag tag-${article.topic}`}>
+            <div className={`tag tag-generic tag tag-${article.topic}`}>
               {article.topic}
-            </span>
+            </div>
             <small>
               Posted: {new Date(article.created_at).getDate()}/
               {new Date(article.created_at).getMonth()}/

@@ -1,0 +1,47 @@
+.footer {
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #302f2f; /* Alternate: #101010 */
+  overflow: hidden;
+  padding: 20px;
+}
+
+.links-header {
+  color: white;
+  margin: 20px;
+}
+
+.links {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a:link {
+  color: white;
+  text-decoration: none;
+  font: arial, sans-serif;
+  margin: 20px;
+}
+
+.footer a:hover {
+  color: white;
+  text-decoration: underline;
+  font: arial, sans-serif;
+  margin: 20px;
+}
+
+.footer a:visited {
+  color: white;
+  text-decoration: none;
+  font: arial, sans-serif;
+  margin: 20px;
+}
+
+.notice {
+  padding-top: 20px;
+  color: white;
+  font-size: 13px;
+}
