@@ -1,5 +1,10 @@
 .header-wrapper {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
 }
 
 header {
@@ -27,8 +32,8 @@ header h1 {
 }
 
 .navbar li {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 20px;
+  font-size: 20px;
 }
 
 .navbar a {

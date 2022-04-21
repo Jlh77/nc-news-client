@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "../../utils/api";
 import ArticleCard from "./ArticleCard";
-import "./Articles.css";
+import "./AllArticles.css";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -35,12 +35,12 @@ const Articles = () => {
     );
   return (
     <main>
-      <h1>Articles</h1>
-      <ul className="articles">
+      <h1>{topic ? topic : `All`} Articles</h1>
+      <section className="articles-container">
         {articles.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
-      </ul>
+      </section>
     </main>
   );
 };

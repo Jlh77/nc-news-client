@@ -1,4 +1,6 @@
 .article {
+  height: 80vh;
+  background-color: white;
   border: 1px solid green;
   margin: 40px;
   padding: 25px;
