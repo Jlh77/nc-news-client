@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./Article.css";
+import "./ViewArticle.css";
 import { getArticleById } from "../../utils/api";
 
 const Article = () => {

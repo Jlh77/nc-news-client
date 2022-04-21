@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 
-import Header from "./components/Header";
-import Article from "./pages/Article/Article";
-import Articles from "./pages/Articles/Articles";
+import Header from "./components/Header/Header";
+import Article from "./components/ViewArticle/ViewArticle";
+import Articles from "./components/AllArticles/AllArticles";
 
 function App() {
   return (
