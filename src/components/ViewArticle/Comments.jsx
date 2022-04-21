@@ -3,13 +3,16 @@ import { getCommentsByArticleId } from "../../utils/api";
 
 const Comments = ({ article }) => {
   const [comments, setCommments] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     getCommentsByArticleId(article.article_id).then((comments) => {
-      console.log(comments);
       setCommments(comments);
+      setIsLoading(false);
     });
   }, []);
 
+  if (isLoading) return <p>Loading Comments...</p>;
   return (
     <section className="comments-section">
       {comments.map((comment) => {
