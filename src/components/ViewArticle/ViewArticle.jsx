@@ -27,6 +27,8 @@ const Article = () => {
   }, [article_id]);
 
   const handleUpvote = () => {
+    // A bit of optimistic rendering
+    setArticle({ ...article, votes: ++article.votes });
     upvoteArticleById(article_id).then((updatedArticle) => {
       setArticle({ ...article, votes: updatedArticle.votes });
     });
