@@ -17,7 +17,9 @@ export const getArticleById = (article_id) => {
 };
 
 export const upvoteArticleById = (article_id) => {
-  return newsApi.patch(`articles/${article_id}`).then(({ data }) => {
-    return data.article;
-  });
+  return newsApi
+    .patch(`articles/${article_id}`, { params: { inc_votes: 1 } })
+    .then(({ data }) => {
+      return data.article;
+    });
 };
