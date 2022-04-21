@@ -18,8 +18,8 @@ export const getArticleById = (article_id) => {
 
 export const upvoteArticleById = (article_id) => {
   return newsApi
-    .patch(`articles/${article_id}`, { params: { inc_votes: 1 } })
+    .patch(`articles/${article_id}`, { inc_votes: 1 })
     .then(({ data }) => {
-      return data.article;
+      return data.updatedArticle;
     });
 };
