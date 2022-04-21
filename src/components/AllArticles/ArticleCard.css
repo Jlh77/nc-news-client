@@ -5,8 +5,10 @@
   overflow: hidden;
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
-  background: #ffffff;
+  background: #fff7f7;
   /*background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);*/
+  height: 300px;
+  padding: 20px;
 }
 
 .card__body {
@@ -39,17 +41,16 @@
   background: #56ccf2;
   background: linear-gradient(to bottom, #2f80ed, #56ccf2);
 }
-
-.tag-cooking {
-  background: #d1913c;
-  background: linear-gradient(to bottom, #ffd194, #d1913c);
-}
-
-.tag-football {
-  background: #cb2d3e;
-  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
-}
 */
+
+.card-head {
+  margin: 10px;
+}
+
+.card-head h4 {
+  text-transform: capitalize;
+}
+
 .card__body h4 {
   font-size: 1.5rem;
   text-transform: capitalize;

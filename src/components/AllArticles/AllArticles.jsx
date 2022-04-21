@@ -25,7 +25,13 @@ const Articles = () => {
       });
   }, [topic]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <main>
+        <h1>{topic ? topic : `All`} Articles</h1>
+        <p>Loading...</p>
+      </main>
+    );
   if (err) return <p>Oops! Something went wrong, please try again.</p>;
   if (!articles.length)
     return (
