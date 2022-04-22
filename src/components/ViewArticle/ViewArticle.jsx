@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
 import { getArticleById, upvoteArticleById } from "../../utils/api";
+import Comments from "./Comments";
 
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,23 +38,27 @@ const Article = () => {
   if (isLoading) return <p>Loading...</p>;
   if (err) return <p>This article does not exist, please check the URL.</p>;
   return (
-    <article className="article">
-      <h1>{article.title}</h1>
-      <p>{article.body}</p>
-      <p>
-        Written By: {article.author} in {article.topic}
-      </p>
-      <section className="comments">
-        Comment Count: {article.comment_count} Votes: {article.votes}{" "}
-        <button onClick={handleUpvote}>
-          Click to Upvote! Current upvotes: {article.votes}
-        </button>
-      </section>
-      <div>
-        Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
-        {postedOn.getFullYear()}
-      </div>
-    </article>
+    <>
+      <article className="article">
+        <h1>{article.title}</h1>
+        <p>{article.body}</p>
+        <p>
+          Written By: {article.author} in {article.topic}
+        </p>
+        <section className="comments">
+          Comment Count: {article.comment_count} Votes: {article.votes}{" "}
+          <button onClick={handleUpvote}>
+            Click to Upvote! Current upvotes: {article.votes}
+          </button>
+        </section>
+        <div>
+          Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
+          {postedOn.getFullYear()}
+        </div>
+      </article>
+
+      <Comments article={article}></Comments>
+    </>
   );
 };
 export default Article;
