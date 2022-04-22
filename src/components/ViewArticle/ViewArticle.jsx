@@ -47,9 +47,7 @@ const Article = () => {
         </p>
         <section className="comments">
           Comment Count: {article.comment_count} Votes: {article.votes}{" "}
-          <button onClick={handleUpvote}>
-            Click to Upvote! Current upvotes: {article.votes}
-          </button>
+          <button onClick={handleUpvote}>Upvote</button>
         </section>
         <div>
           Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/

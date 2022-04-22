@@ -17,8 +17,8 @@ const Comments = ({ article }) => {
     <section className="comments-section">
       {comments.map((comment) => {
         return (
-          <div>
-            <h1>{comment.author}</h1> {comment.body}
+          <div key={comment.comment_id} className="comment">
+            <h4>{comment.author}</h4> {comment.body}
           </div>
         );
       })}
