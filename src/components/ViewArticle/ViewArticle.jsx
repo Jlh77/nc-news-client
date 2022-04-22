@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
 import { getArticleById, upvoteArticleById } from "../../utils/api";
-import Comments from "./Comments";
+import CommentSection from "./CommentSection";
 
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,9 +47,7 @@ const Article = () => {
         </p>
         <section className="comments">
           Comment Count: {article.comment_count} Votes: {article.votes}{" "}
-          <button onClick={handleUpvote}>
-            Click to Upvote! Current upvotes: {article.votes}
-          </button>
+          <button onClick={handleUpvote}>Upvote</button>
         </section>
         <div>
           Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
@@ -57,7 +55,7 @@ const Article = () => {
         </div>
       </article>
 
-      <Comments article={article}></Comments>
+      <CommentSection article={article}></CommentSection>
     </>
   );
 };
