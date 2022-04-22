@@ -21,7 +21,7 @@ const ArticleCard = ({ article }) => {
             </div>
             <small>
               Posted: {new Date(article.created_at).getDate()}/
-              {new Date(article.created_at).getMonth()}/
+              {new Date(article.created_at).getMonth() + 1}/
               {new Date(article.created_at).getFullYear()}
             </small>
           </div>
