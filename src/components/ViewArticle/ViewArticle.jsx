@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
 import { getArticleById, upvoteArticleById } from "../../utils/api";
-import Comments from "./Comments";
+import CommentSection from "./CommentSection";
 
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,7 +55,7 @@ const Article = () => {
         </div>
       </article>
 
-      <Comments article={article}></Comments>
+      <CommentSection article={article}></CommentSection>
     </>
   );
 };

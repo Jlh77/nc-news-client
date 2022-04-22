@@ -25,3 +25,14 @@ export const getCommentsByArticleId = async (article_id) => {
   const { data } = await newsApi.get(`articles/${article_id}/comments`);
   return data.comments;
 };
+
+export const postCommentOnArticleById = async (
+  article_id,
+  { username, newComment }
+) => {
+  const { data } = await newsApi.post(`articles/${article_id}/comments`, {
+    username,
+    body: newComment,
+  });
+  return data.postedComment;
+};
