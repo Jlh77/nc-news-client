@@ -12,14 +12,19 @@ const CommentSection = ({ article }) => {
       setCommments(comments);
       setIsLoading(false);
     });
-  }, []);
+  }, [article.article_id]);
 
   if (isLoading) return <p>Loading Comments...</p>;
   return (
     <>
-      <NewComment comments={comments} />
+      <NewComment
+        comments={comments}
+        setComments={setCommments}
+        article_id={article.article_id}
+      />
       <section className="comment-section">
         {comments.map((comment) => {
+          console.log(comment);
           return (
             <div key={comment.comment_id}>
               <h4>{comment.author}</h4> {comment.body}
