@@ -7,7 +7,6 @@ const NewComment = ({ comments, setComments, article_id }) => {
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
   const [tempNewCommentId, settempNewCommentId] = useState(0);
-  console.log(comments);
 
   const handleSubmit = (e) => {
     settempNewCommentId((currId) => currId + 1);
