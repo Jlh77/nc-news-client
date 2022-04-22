@@ -22,7 +22,7 @@ const CommentSection = ({ article }) => {
         {comments.map((comment) => {
           return (
             <div key={comment.comment_id}>
-              <h1>{comment.author}</h1> {comment.body}
+              <h4>{comment.author}</h4> {comment.body}
             </div>
           );
         })}
