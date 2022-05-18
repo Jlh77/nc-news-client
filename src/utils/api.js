@@ -43,15 +43,3 @@ export const deleteCommentById = async (comment_id) => {
   const { data } = await newsApi.delete(`comments/${comment_id}`);
   return data;
 };
-
-// auth routes
-
-export const getCurrentUser = async () => {
-  const { data } = await newsApi.post(`auth/current-user`);
-  return data;
-};
-
-export const login = async (email, password) => {
-  const { data } = await newsApi.post(`auth/login`, { email, password });
-  return data;
-};
