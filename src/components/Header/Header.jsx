@@ -11,7 +11,7 @@ const Header = () => {
         <h1>NC News</h1>
 
         {user ? (
-          <p>`Hello there, ${user.username}`</p>
+          <p>Hello there, {user.username}</p>
         ) : (
           <p>
             <Link to="/login">Login</Link>
