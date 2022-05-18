@@ -40,7 +40,7 @@ const Article = () => {
   return (
     <>
       <article className="article">
-        <h1>{article.title}</h1>
+        <h2>{article.title}</h2>
         <p>{article.body}</p>
         <p>
           Written By: {article.author} in {article.topic}

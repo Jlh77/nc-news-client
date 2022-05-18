@@ -5,6 +5,12 @@
   background-color: #302f2f; /* Alternate: #101010 */
   overflow: hidden;
   padding: 20px;
+  margin-top: 20px;
+}
+
+.footer h3 {
+  display: grid;
+  place-items: center;
 }
 
 .links-header {

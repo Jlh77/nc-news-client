@@ -11,6 +11,14 @@
   gap: 2rem;
 }
 
+main {
+  padding: 0 1em;
+  max-width: 100rem;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
 main h1 {
   margin: 20px;
   text-transform: capitalize;

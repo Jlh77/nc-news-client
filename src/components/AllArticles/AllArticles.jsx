@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { getArticles } from "../../utils/api";
 import ArticleCard from "./ArticleCard";
 import "./AllArticles.css";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
-  const [sortBy, setSortBy] = useState("created_at");
+  const [sort_by, setSort_by] = useState("created_at");
   const [order, setOrder] = useState("ASC");
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(false);
   const { topic } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams({});
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
+    setCount((curr) => curr + 1);
+    console.log("hmm" + count);
+    setSearchParams({ topic, sort_by, order });
     setIsLoading(true);
     setErr(false);
-    getArticles({ topic, sortBy, order })
+    getArticles({ topic, sort_by, order })
       .then((articles) => {
         setArticles(articles);
         setIsLoading(false);
@@ -25,10 +30,11 @@ const Articles = () => {
         setIsLoading(false);
         setErr(true);
       });
-  }, [topic, sortBy, order]);
+  }, [topic, sort_by, order]);
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  const handleSortByChange = (e) => {
-    setSortBy(e.target.value);
+  const handlesort_byChange = (e) => {
+    setSort_by(e.target.value);
   };
   const handleOrderChange = (e) => {
     setOrder(e.target.value);
@@ -40,8 +46,8 @@ const Articles = () => {
       <select
         name="sort-by"
         id="sort-by"
-        value={sortBy}
-        onChange={handleSortByChange}
+        value={sort_by}
+        onChange={handlesort_byChange}
       >
         <option value="created_at">Date</option>
         <option value="comment_count">Number of comments</option>
@@ -53,8 +59,8 @@ const Articles = () => {
         value={order}
         onChange={handleOrderChange}
       >
-        <option value="DESC">Ascending</option>
-        <option value="ASC">Descending</option>
+        <option value="ASC">Ascending</option>
+        <option value="DESC">Descending</option>
       </select>
     </div>
   );

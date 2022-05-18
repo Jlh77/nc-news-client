@@ -1,11 +1,8 @@
 .header-wrapper {
-  border-bottom: 1px solid rgb(216, 216, 216);
-  width: 100%;
-  margin-top: 0;
-  top: 0;
-  left: 0;
-  border-bottom: 1px solid rgb(192, 192, 192);
-  background: #ffffff;
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid #fff2e9;
 }
 
 header {
@@ -18,7 +15,12 @@ header h1 {
   margin: 0.5em;
   font-size: 3em;
   color: #29b4eb;
-  margin-top: 0;
+  margin-top: 0.5em;
+}
+
+header p {
+  display: flex;
+  justify-content: center;
 }
 
 .navbar {

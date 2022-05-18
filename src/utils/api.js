@@ -4,9 +4,9 @@ const newsApi = axios.create({
   baseURL: "https://nc-news77.herokuapp.com/api",
 });
 
-export const getArticles = async ({ topic, sortBy, order }) => {
+export const getArticles = async ({ topic, sort_by, order }) => {
   const { data } = await newsApi.get("/articles", {
-    params: { topic, sortBy, order },
+    params: { topic, sort_by, order, limit: "100" },
   });
   return data.articles;
 };
@@ -37,4 +37,9 @@ export const postCommentOnArticleById = async (
     body: newComment,
   });
   return data.postedComment;
+};
+
+export const deleteCommentById = async (comment_id) => {
+  const { data } = await newsApi.delete(`comments/${comment_id}`);
+  return data;
 };
