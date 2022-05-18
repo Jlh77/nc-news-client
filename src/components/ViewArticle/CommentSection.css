@@ -1,0 +1,24 @@
+.comment-section {
+  background-color: white;
+  padding: 2em;
+}
+
+.comment-section .comment {
+  text-align: ce;
+}
+
+.comment-section .comment h4 {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.comment-section button {
+  display: block;
+  margin-top: 1em;
+  background-color: red;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 0.5em;
+  font-weight: bold;
+}

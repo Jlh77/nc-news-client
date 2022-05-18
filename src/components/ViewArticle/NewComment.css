@@ -1,0 +1,33 @@
+.addNewComment {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background-color: white;
+  width: 80vw;
+  text-align: center;
+  padding: 20px;
+}
+
+.addNewComment textarea {
+  max-width: 1000px;
+  width: 80vw;
+  height: 80px;
+  resize: none;
+}
+
+.submit-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addNewComment button {
+  width: 100px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  background-color: #29b4eb;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  margin: 10px;
+}

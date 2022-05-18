@@ -35,7 +35,7 @@ const CommentSection = ({ article }) => {
       <section className="comment-section">
         {comments.map((comment) => {
           return (
-            <div key={comment.comment_id}>
+            <div key={comment.comment_id} className="comment">
               <h4>{comment.author}</h4> {comment.body}
               <button
                 onClick={(e) => {

@@ -5,7 +5,7 @@
   overflow: hidden;
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
-  background: #fff7f7;
+  background: white;
   /*background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);*/
   height: 300px;
   padding: 20px;

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/User";
 import { postCommentOnArticleById } from "../../utils/api";
+import "./NewComment.css";
 
 const NewComment = ({ comments, setComments, article_id }) => {
   const username = useContext(UserContext).user.username;
@@ -39,13 +40,13 @@ const NewComment = ({ comments, setComments, article_id }) => {
   };
 
   return (
-    <section>
+    <section className="addNewComment">
       <h3>Add a new comment</h3>
       <p>{err}</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="new-comment"></label>
-        <input
-          type="text"
+        <textarea
+          maxLength={500}
           id="new-comment"
           name="new-comment"
           value={newComment}
@@ -53,7 +54,9 @@ const NewComment = ({ comments, setComments, article_id }) => {
             setNewComment(e.target.value);
           }}
         />
-        <button>Add comment</button>
+        <div className="submit-wrapper">
+          <button>Add comment</button>
+        </div>
       </form>
     </section>
   );
