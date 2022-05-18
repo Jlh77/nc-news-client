@@ -48,6 +48,6 @@ img {
 
 main {
   padding: 0 1em;
-  max-width: 60rem;
+  /* max-width: 60rem; */
   margin: 0 auto;
 }

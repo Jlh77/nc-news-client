@@ -11,10 +11,43 @@
   gap: 2rem;
 }
 
+.all-articles-top {
+  background-color: white;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.all-articles-top select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.all-articles-top select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
 main {
   padding: 0 1em;
-  max-width: 100rem;
+  width: 100%;
   margin: 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0%;
+  padding-left: 0%;
   display: grid;
   place-items: center;
 }

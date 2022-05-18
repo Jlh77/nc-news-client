@@ -31,7 +31,6 @@ const Articles = () => {
         setErr(true);
       });
   }, [topic, sort_by, order]);
-  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   const handlesort_byChange = (e) => {
     setSort_by(e.target.value);
@@ -41,8 +40,9 @@ const Articles = () => {
   };
 
   const topJsx = (
-    <div>
+    <div className="all-articles-top">
       <h1>{topic ? topic : `All`} Articles</h1>
+      <p>Sort By:</p>
       <select
         name="sort-by"
         id="sort-by"
