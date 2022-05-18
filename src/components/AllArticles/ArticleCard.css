@@ -24,7 +24,6 @@
   padding: 0.25em 0.75em;
   border-radius: 1em;
   font-size: 0.75rem;
-  margin: 10px;
 }
 
 .tag + .tag {
@@ -43,8 +42,9 @@
 */
 
 .card-head {
-  margin: 10px;
-  margin-top: 5px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: larger;
 }
 
 .card-head h4 {
@@ -57,14 +57,20 @@
 }
 
 .card__footer {
-  padding: 1rem;
   width: auto;
-  margin-top: auto;
+  margin-top: 10px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.card__footer h5 {
+  margin: 0px;
+  margin-bottom: 1em;
 }
 
 .user {
   display: flex;
-  gap: 0.5rem;
+  width: 100%;
 }
 
 .user__image {

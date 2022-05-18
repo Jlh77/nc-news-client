@@ -26,8 +26,8 @@ const ArticleCard = ({ article }) => {
             </small>
           </div>
         </div>
+        <p className="votes">Votes: {article.votes}</p>
       </div>
-      <p className="votes">Votes: {article.votes}</p>
     </article>
   );
 };
