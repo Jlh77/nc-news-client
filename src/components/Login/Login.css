@@ -1,7 +1,8 @@
-.article {
+.login-page {
   border: 1px solid rgb(221, 221, 221);
   padding: 2em;
   background: white;
   margin-top: 1em;
   max-width: 80em;
+  width: 100%;
 }

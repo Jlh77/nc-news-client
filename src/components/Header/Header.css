@@ -24,6 +24,12 @@ header p {
   justify-content: center;
 }
 
+header p a {
+  text-decoration: none;
+  color: #1c2325;
+  font-size: large;
+}
+
 .navbar {
   display: flex;
   justify-content: center;

@@ -1,6 +1,7 @@
 .comment-section {
   background-color: white;
   padding: 2em;
+  max-width: 80em;
 }
 
 .comment-section .comment {

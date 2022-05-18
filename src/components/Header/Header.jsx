@@ -9,7 +9,14 @@ const Header = () => {
     <div className="header-wrapper">
       <header>
         <h1>NC News</h1>
-        <p>Hello there, {user.username}</p>
+
+        {user ? (
+          <p>`Hello there, ${user.username}`</p>
+        ) : (
+          <p>
+            <Link to="/login">Login</Link>
+          </p>
+        )}
       </header>
       <nav className="navbar">
         <ul>

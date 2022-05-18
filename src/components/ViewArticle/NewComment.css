@@ -3,6 +3,7 @@
   margin-bottom: 2em;
   background-color: white;
   width: 80vw;
+  max-width: 80em;
   text-align: center;
   padding: 20px;
 }

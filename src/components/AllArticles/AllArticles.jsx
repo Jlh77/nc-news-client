@@ -16,7 +16,6 @@ const Articles = () => {
 
   useEffect(() => {
     setCount((curr) => curr + 1);
-    console.log("hmm" + count);
     setSearchParams({ topic, sort_by, order });
     setIsLoading(true);
     setErr(false);

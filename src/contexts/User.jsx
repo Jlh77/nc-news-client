@@ -1,10 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getCurrentUser } from "../utils/api";
 
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
-  // There is no authentication layer so a user is hardcoded for now
-  const [user, setUser] = useState({ username: "cooljmessy" });
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const currentUser = await getCurrentUser();
+      setUser(currentUser);
+    };
+    loadUser();
+  }, [setUser]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
