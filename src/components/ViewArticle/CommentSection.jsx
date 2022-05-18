@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCommentsByArticleId } from "../../utils/api";
+import { getCommentsByArticleId, deleteCommentById } from "../../utils/api";
 import "./CommentSection.css";
 import NewComment from "./NewComment";
 
@@ -14,6 +14,16 @@ const CommentSection = ({ article }) => {
     });
   }, [article.article_id]);
 
+  const deleteComment = async (e, comment_id) => {
+    await deleteCommentById(comment_id);
+    setCommments((currComments) => {
+      const newList = currComments.filter(
+        (comment) => comment.comment_id !== comment_id
+      );
+      return newList;
+    });
+  };
+
   if (isLoading) return <p>Loading Comments...</p>;
   return (
     <>
@@ -24,10 +34,16 @@ const CommentSection = ({ article }) => {
       />
       <section className="comment-section">
         {comments.map((comment) => {
-          console.log(comment);
           return (
             <div key={comment.comment_id}>
               <h4>{comment.author}</h4> {comment.body}
+              <button
+                onClick={(e) => {
+                  deleteComment(e, comment.comment_id);
+                }}
+              >
+                Delete
+              </button>
             </div>
           );
         })}

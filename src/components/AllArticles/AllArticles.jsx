@@ -12,8 +12,11 @@ const Articles = () => {
   const [err, setErr] = useState(false);
   const { topic } = useParams();
   const [searchParams, setSearchParams] = useSearchParams({});
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
+    setCount((curr) => curr + 1);
+    console.log("hmm" + count);
     setSearchParams({ topic, sort_by, order });
     setIsLoading(true);
     setErr(false);
@@ -28,6 +31,7 @@ const Articles = () => {
         setErr(true);
       });
   }, [topic, sort_by, order]);
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   const handlesort_byChange = (e) => {
     setSort_by(e.target.value);
