@@ -1,16 +1,14 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../utils/api";
-import { UserContext } from "../../contexts/User";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/User";
 import "./Login.css";
 
 const Login = () => {
-  const [err, setErr] = useState(null);
+  const [loginErr, setLoginErr] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleEmailChange = async (e) => setEmail(e.target.value);
 
@@ -18,25 +16,17 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setErr(null);
+    setLoginErr(null);
 
     try {
-      if (currentUser) return;
-      const res = await login(email, password);
-      if (res.data.user) {
-        setCurrentUser(res.data.user);
-        navigate("account");
-      } else throw err;
+      await login(email, password);
     } catch (err) {
-      console.log("its all gone horrribly wrong");
-      console.log(err);
       // if login fail
-      setErr(
+      setLoginErr(
         `Login Failed: ${
-          err.response?.data?.message || "Something went wrong."
+          err?.response?.data?.message || "Something went wrong."
         }`
       );
-      console.log("LOGIN ERROR MESSAGE >", err.response?.data?.message);
     }
   };
 
@@ -44,7 +34,7 @@ const Login = () => {
     <div className="login-page">
       <h1 style={{ textAlign: "center" }}>Login</h1>
 
-      <p id="error">{err}</p>
+      <p id="error">{loginErr}</p>
 
       <form className="login-form" action="" onSubmit={handleLogin}>
         <label htmlFor="email">Email: </label>

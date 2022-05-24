@@ -1,7 +1,6 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { register } from "../../utils/api";
-import { UserContext } from "../../contexts/User";
+import { useAuth } from "../../contexts/User";
 import "./Register.css";
 
 const Register = ({ navigation }) => {
@@ -16,7 +15,7 @@ const Register = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [passwordErr, setPasswordErr] = useState(null);
 
-  const { user, setCurrentUser } = useContext(UserContext);
+  const { currentUser, setCurrentUser, register } = useAuth();
 
   const handleEmailChange = async (e) => setEmail(e.target.value);
 
@@ -30,18 +29,13 @@ const Register = ({ navigation }) => {
 
     try {
       const res = await register(email, username, password);
-      if (res.data.user) {
-        setCurrentUser(user);
-        navigation.navigate("account");
-      } else throw err;
     } catch (err) {
       // if register fails
       setErr(
         `Failed to create account: ${
-          err.response.data.message || "Something went wrong."
+          err.response.data.msg || "Something went wrong."
         }`
       );
-      console.log("REGISTER ERROR MESSAGE >", err.response.data.message);
     }
   };
 
