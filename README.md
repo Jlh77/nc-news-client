@@ -1,4 +1,4 @@
-# "NC-News" project by Joseph Hawkins
+# "NC-News" project by Joe
 
 ## Description
 
