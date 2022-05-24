@@ -47,31 +47,3 @@ export const deleteCommentById = async (comment_id) => {
   const { data } = await newsApi.delete(`comments/${comment_id}`);
   return data;
 };
-
-// auth routes
-
-// export const getCSRFToken = async () => {
-//   const res = await newsApi.get(`auth/getCSRFToken`);
-//   newsApi.defaults.headers.post["X-CSRF-Token"] = res.data.CSRFToken;
-//   return res.data;
-// };
-
-export const getCurrentUser = async () => {
-  const { data } = await newsApi.get(`auth/current-user`);
-  return data;
-};
-
-export const login = async (email, password) => {
-  const res = await newsApi.post(`auth/login`, { email, password });
-  return res;
-};
-
-export const register = async (email, username, password) => {
-  const res = await newsApi.post(`auth/join`, { email, username, password });
-  return res;
-};
-
-export const logout = async () => {
-  const res = await newsApi.post(`auth/logout`);
-  return res;
-};
