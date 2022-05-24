@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 axios.defaults.withCredentials = true;
+axios.defaults.credentials = "include";
 
 const authApi = axios.create({
   baseURL:
@@ -33,7 +34,6 @@ export const UserProvider = (props) => {
   const getCurrentUser = async () => {
     const { data } = await authApi.get(`current-user`);
     setCurrentUser(data);
-    console.log("Loaded User>>>", data);
     return data;
   };
 
@@ -49,7 +49,7 @@ export const UserProvider = (props) => {
     if (currentUser) return;
     const res = await authApi.post(`join`, { email, username, password });
     setChange((change) => !change);
-    navigate("/t");
+    navigate("/");
     return res;
   };
 
