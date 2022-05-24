@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../../contexts/User";
+import { useState } from "react";
 import { postCommentOnArticleById } from "../../utils/api";
+import { useAuth } from "../../contexts/User";
 import "./NewComment.css";
 
 const NewComment = ({ comments, setComments, article_id }) => {
-  const username = useContext(UserContext).user.username;
+  const username = useAuth().currentUser.username;
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
   const [tempNewCommentId, settempNewCommentId] = useState(0);
