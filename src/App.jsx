@@ -7,9 +7,11 @@ import Footer from "./components/Footer/Footer";
 import Article from "./components/ViewArticle/ViewArticle";
 import Articles from "./components/AllArticles/AllArticles";
 import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Account from "./components/Account/Account";
 
 function App() {
-  const { user } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   return (
     <div className="App">
       <Header />
@@ -19,9 +21,19 @@ function App() {
           <Route path="/articles/:article_id" element={<Article />}></Route>
           <Route path="/topics/:topic" element={<Articles />}></Route>
 
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Articles />}></Route>
-          <Route path="/account" element={<Articles />}></Route>
+          {/* When authed */}
+          {currentUser && (
+            <>
+              <Route path="/account" element={<Account />}></Route>
+            </>
+          )}
+          {/* When not authed */}
+          {!currentUser && (
+            <>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/register" element={<Register />}></Route>
+            </>
+          )}
         </Routes>
       </main>
       <Footer />
