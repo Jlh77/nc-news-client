@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/User";
 import "./Register.css";
+import googleLogo from "../../assets/googleLogo.png";
+import facebookLogo from "../../assets/facebookLogo.png";
 
 const Register = ({ navigation }) => {
   const [submitErr, setSubmitErr] = useState(null);
@@ -15,6 +17,8 @@ const Register = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [passwordErr, setPasswordErr] = useState(null);
 
+  const isProduction = process.env.NODE_ENV === "production";
+
   const { register } = useAuth();
 
   const handleEmailChange = async (e) => setEmail(e.target.value);
@@ -22,6 +26,24 @@ const Register = ({ navigation }) => {
   const handleUsernameChange = async (e) => setUsername(e.target.value);
 
   const handlePasswordChange = async (e) => setPassword(e.target.value);
+
+  const googleLogin = () => {
+    window.open(
+      isProduction
+        ? "https://nc-news77.herokuapp.com/api/"
+        : "http://localhost:9099/api/" + "/auth/google",
+      "_self"
+    );
+  };
+
+  const facebookLogin = () => {
+    window.open(
+      isProduction
+        ? "https://nc-news77.herokuapp.com/api/"
+        : "http://localhost:9099/api/" + "/auth/google",
+      "_self"
+    );
+  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -94,12 +116,29 @@ const Register = ({ navigation }) => {
           required
         />
         <br></br>
-        <button className="register-button">Register</button>
+        <button className="register-button">Create Account</button>
       </form>
 
       <p>
         Already a member? <Link to="/login"> Go to login page</Link>
       </p>
+
+      <br></br>
+
+      <div className="socialAuths">
+        <div className="googleContainer" onClick={googleLogin}>
+          <img src={googleLogo} alt="Google Icon" />
+          <p>Sign in with Google</p>
+        </div>
+
+        <div
+          className={"googleContainer facebookContainer"}
+          onClick={facebookLogin}
+        >
+          <img src={facebookLogo} alt="Facebook Icon" />
+          <p>Sign in with Facebook</p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { useAuth } from "./contexts/User";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Article from "./components/ViewArticle/ViewArticle";
-import Articles from "./components/AllArticles/AllArticles";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Account from "./components/Account/Account";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Article from "./Components/ViewArticle/ViewArticle";
+import Articles from "./Components/AllArticles/AllArticles";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
+import Account from "./Components/Account/Account";
 
 function App() {
   const { currentUser } = useAuth();

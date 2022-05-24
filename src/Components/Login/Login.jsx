@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/User";
 import "./Login.css";
+import googleLogo from "../../assets/googleLogo.png";
+import facebookLogo from "../../assets/facebookLogo.png";
 
 const Login = () => {
   const [loginErr, setLoginErr] = useState(null);
@@ -9,6 +11,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const { login } = useAuth();
+
+  const isProduction = process.env.NODE_ENV === "production";
 
   const handleEmailChange = async (e) => setEmail(e.target.value);
 
@@ -26,6 +30,24 @@ const Login = () => {
         `Login Failed: ${err?.response?.data?.msg || "Something went wrong."}`
       );
     }
+  };
+
+  const googleLogin = () => {
+    window.open(
+      isProduction
+        ? "https://nc-news77.herokuapp.com/api/"
+        : "http://localhost:9099/api/" + "/auth/google",
+      "_self"
+    );
+  };
+
+  const facebookLogin = () => {
+    window.open(
+      isProduction
+        ? "https://nc-news77.herokuapp.com/api/"
+        : "http://localhost:9099/api/" + "/auth/google",
+      "_self"
+    );
   };
 
   return (
@@ -71,6 +93,23 @@ const Login = () => {
       <p>
         New here? <Link to="/register"> Click here to join</Link>
       </p>
+
+      <br></br>
+
+      <div className="socialAuths">
+        <div className="googleContainer" onClick={googleLogin}>
+          <img src={googleLogo} alt="Google Icon" />
+          <p>Sign in with Google</p>
+        </div>
+
+        <div
+          className={"googleContainer facebookContainer"}
+          onClick={facebookLogin}
+        >
+          <img src={facebookLogo} alt="Facebook Icon" />
+          <p>Sign in with Facebook</p>
+        </div>
+      </div>
     </div>
   );
 };
