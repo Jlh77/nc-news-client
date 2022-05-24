@@ -1,20 +1,22 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../contexts/User";
+import { useAuth } from "../../contexts/User";
 import "./Header.css";
 
 const Header = () => {
-  const { user } = useContext(UserContext);
+  const { currentUser, logout } = useAuth();
   return (
     <div className="header-wrapper">
       <header>
         <h1>NC News</h1>
-
-        {user ? (
-          <p>Hello there, {user.username}</p>
+        {currentUser ? (
+          <>
+            <p>Hello there, {currentUser.username}</p>{" "}
+            <button onClick={logout}>Logout</button>
+          </>
         ) : (
           <p>
-            <Link to="/login">Login</Link>
+            <Link to="/login">Login </Link>|
+            <Link to="/register"> Register</Link>
           </p>
         )}
       </header>

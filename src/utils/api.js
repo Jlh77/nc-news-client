@@ -1,18 +1,22 @@
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 const newsApi = axios.create({
-  baseURL: "https://nc-news77.herokuapp.com/api",
+  baseURL:
+    process.env.NODE_ENV === "production"
+      ? "https://nc-news77.herokuapp.com/api/"
+      : "http://localhost:9099/api/",
 });
 
 export const getArticles = async ({ topic, sort_by, order }) => {
-  const { data } = await newsApi.get("/articles", {
+  const { data } = await newsApi.get("articles", {
     params: { topic, sort_by, order, limit: "100" },
   });
   return data.articles;
 };
 
 export const getArticleById = async (article_id) => {
-  const { data } = await newsApi.get(`/articles/${article_id}`);
+  const { data } = await newsApi.get(`articles/${article_id}`);
   return data.article;
 };
 

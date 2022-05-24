@@ -1,0 +1,26 @@
+.register-page {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 2em;
+  background: white;
+  margin-top: 1em;
+  max-width: 80em;
+  width: 100%;
+}
+
+.register-page form {
+  margin: 0 auto;
+  width: 500px;
+  max-width: 90vw;
+}
+
+.register-page p {
+  margin: 0 auto;
+  width: 500px;
+  max-width: 90vw;
+}
+
+.register-page form input[type="email"],
+[type="password"],
+[type="text"] {
+  width: 100%;
+}
