@@ -23,9 +23,7 @@ const Login = () => {
     } catch (err) {
       // if login fail
       setLoginErr(
-        `Login Failed: ${
-          err?.response?.data?.message || "Something went wrong."
-        }`
+        `Login Failed: ${err?.response?.data?.msg || "Something went wrong."}`
       );
     }
   };
