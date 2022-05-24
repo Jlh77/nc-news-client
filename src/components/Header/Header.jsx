@@ -14,7 +14,8 @@ const Header = () => {
           <p>`Hello there, ${user.username}`</p>
         ) : (
           <p>
-            <Link to="/login">Login</Link>
+            <Link to="/login">Login </Link>|
+            <Link to="/register"> Register</Link>
           </p>
         )}
       </header>
