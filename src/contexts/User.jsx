@@ -4,18 +4,19 @@ import { getCurrentUser } from "../utils/api";
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
-  const [user, setUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     const loadUser = async () => {
-      const currentUser = await getCurrentUser();
-      setUser(currentUser);
+      const getUser = await getCurrentUser();
+      console.log("New User>>>", getUser);
+      setCurrentUser(getUser);
     };
     loadUser();
-  }, [setUser]);
+  }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ currentUser, setCurrentUser }}>
       {props.children}
     </UserContext.Provider>
   );
