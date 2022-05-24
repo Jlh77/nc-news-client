@@ -8,7 +8,6 @@ const Header = () => {
     <div className="header-wrapper">
       <header>
         <h1>NC News</h1>
-
         {currentUser ? (
           <>
             <p>Hello there, {currentUser.username}</p>{" "}

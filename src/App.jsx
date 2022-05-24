@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import { UserContext } from "./contexts/User";
+import { useAuth } from "./contexts/User";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -11,7 +10,7 @@ import Register from "./components/Register/Register";
 import Account from "./components/Account/Account";
 
 function App() {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser } = useAuth();
   return (
     <div className="App">
       <Header />

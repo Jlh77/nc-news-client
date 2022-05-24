@@ -28,7 +28,7 @@ const Register = ({ navigation }) => {
     setErr(null);
 
     try {
-      const res = await register(email, username, password);
+      await register(email, username, password);
     } catch (err) {
       // if register fails
       setErr(
