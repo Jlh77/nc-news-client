@@ -1,4 +1,4 @@
-# "NC-News" project by Joe
+# "NC-News" Project By Joe
 
 ## Description
 
