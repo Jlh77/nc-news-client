@@ -1,4 +1,4 @@
-.login-page {
+.register-page {
   border: 1px solid rgb(221, 221, 221);
   padding: 2em;
   background: white;
@@ -7,19 +7,20 @@
   width: 100%;
 }
 
-.login-page form {
+.register-page form {
   margin: 0 auto;
   width: 500px;
   max-width: 90vw;
 }
 
-.login-page p {
+.register-page p {
   margin: 0 auto;
   width: 500px;
   max-width: 90vw;
 }
 
-.login-page form input[type="email"],
-[type="password"] {
+.register-page form input[type="email"],
+[type="password"],
+[type="text"] {
   width: 100%;
 }
