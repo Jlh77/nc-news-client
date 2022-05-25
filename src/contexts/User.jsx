@@ -34,6 +34,7 @@ export const UserProvider = (props) => {
   const getCurrentUser = async () => {
     const { data } = await authApi.get(`current-user`);
     setCurrentUser(data);
+    console.log(data);
     return data;
   };
 

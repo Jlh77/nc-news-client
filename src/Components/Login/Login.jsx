@@ -45,7 +45,7 @@ const Login = () => {
     window.open(
       isProduction
         ? "https://nc-news77.herokuapp.com/api/"
-        : "http://localhost:9099/api/" + "/auth/google",
+        : "http://localhost:9099/api/" + "/auth/facebook",
       "_self"
     );
   };
@@ -104,6 +104,7 @@ const Login = () => {
 
         <div
           className={"googleContainer facebookContainer"}
+          style={{ display: "none" }}
           onClick={facebookLogin}
         >
           <img src={facebookLogo} alt="Facebook Icon" />

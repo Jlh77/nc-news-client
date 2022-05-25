@@ -46,6 +46,10 @@ img {
   max-width: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 main {
   padding: 0 1em;
   /* max-width: 60rem; */
