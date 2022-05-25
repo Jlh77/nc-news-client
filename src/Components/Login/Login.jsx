@@ -102,6 +102,11 @@ const Login = () => {
           <p>Sign in with Google</p>
         </div>
 
+        <p>
+          *NOTE: google has not yet approved this site for production, so this
+          may not work with your external google account yet*
+        </p>
+
         <div
           className={"googleContainer facebookContainer"}
           style={{ display: "none" }}
