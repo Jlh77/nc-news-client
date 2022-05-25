@@ -35,7 +35,7 @@ const Login = () => {
   const googleLogin = () => {
     window.open(
       isProduction
-        ? "https://nc-news77.netlify.com/api/auth/google"
+        ? "https://nc-news77.heroku.com/api/auth/google"
         : "http://localhost:9099/api/auth/google",
       "_self"
     );
