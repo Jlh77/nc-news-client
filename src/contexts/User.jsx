@@ -18,17 +18,14 @@ export const useAuth = () => {
 
 export const UserProvider = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [change, setChange] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setIsLoading(true);
     const loadUser = async () => {
       await getCurrentUser();
     };
     loadUser();
-    setIsLoading(false);
   }, [change]);
 
   const getCurrentUser = async () => {
@@ -70,11 +67,9 @@ export const UserProvider = (props) => {
     return res;
   };
 
-  // export const getCSRFToken = async () => {
-  //   const res = await newsApi.get(`getCSRFToken`);
-  //   newsApi.defaults.headers.post["X-CSRF-Token"] = res.data.CSRFToken;
-  //   return res.data;
-  // };
+  const unlinkGoogle = async () => {
+    return await authApi.get(`/google/unlink`);
+  };
 
   return (
     <UserContext.Provider
@@ -87,6 +82,7 @@ export const UserProvider = (props) => {
         getCurrentUser,
         forgotPassword,
         resetPassword,
+        unlinkGoogle,
       }}
     >
       {props.children}
