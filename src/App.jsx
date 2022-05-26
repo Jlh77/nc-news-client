@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Account from "./Components/Account/Account";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import ResetPassword from "./Components/ResetPassword/ResetPassword";
 
 function App() {
   const { currentUser } = useAuth();
@@ -21,6 +22,7 @@ function App() {
           <Route path="/articles/:article_id" element={<Article />}></Route>
           <Route path="/topics/:topic" element={<Articles />}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route path="/reset-password" element={<ResetPassword />}></Route>
 
           {/* When authed */}
           {currentUser && (

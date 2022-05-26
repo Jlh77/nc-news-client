@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { scryRenderedDOMComponentsWithTag } from "react-dom/test-utils";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/User";
 
