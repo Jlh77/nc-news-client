@@ -34,6 +34,7 @@ export const UserProvider = (props) => {
   const getCurrentUser = async () => {
     const { data } = await authApi.get(`current-user`);
     setCurrentUser(data);
+    console.log(data);
     return data;
   };
 
@@ -60,6 +61,16 @@ export const UserProvider = (props) => {
     return res;
   };
 
+  const forgotPassword = async (email) => {
+    const res = await authApi.post(`forgot-password`, { email });
+    return res;
+  };
+
+  const resetPassword = async (id, password, token) => {
+    const res = await authApi.post(`reset-password`, { id, password, token });
+    return res;
+  };
+
   // export const getCSRFToken = async () => {
   //   const res = await newsApi.get(`getCSRFToken`);
   //   newsApi.defaults.headers.post["X-CSRF-Token"] = res.data.CSRFToken;
@@ -75,6 +86,8 @@ export const UserProvider = (props) => {
         register,
         logout,
         getCurrentUser,
+        forgotPassword,
+        resetPassword,
       }}
     >
       {props.children}

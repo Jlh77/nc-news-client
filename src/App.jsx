@@ -8,6 +8,7 @@ import Articles from "./Components/AllArticles/AllArticles";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Account from "./Components/Account/Account";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 
 function App() {
   const { currentUser } = useAuth();
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Articles />}></Route>
           <Route path="/articles/:article_id" element={<Article />}></Route>
           <Route path="/topics/:topic" element={<Articles />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
 
           {/* When authed */}
           {currentUser && (

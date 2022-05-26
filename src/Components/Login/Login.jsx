@@ -91,6 +91,12 @@ const Login = () => {
       </form>
 
       <p>
+        <Link to="/forgot-password">Forgot Password</Link>
+      </p>
+
+      <br></br>
+
+      <p>
         New here? <Link to="/register"> Click here to join</Link>
       </p>
 
@@ -103,8 +109,10 @@ const Login = () => {
         </div>
 
         <p>
-          *NOTE: google has not yet approved this site for production, so this
-          may not work with your external google account yet*
+          <span style={{ fontWeight: "bold" }}>*NOTE*</span>: Google has not yet
+          approved this portfolio site for production, so this may not work with
+          an external google account, but does work in a development environment
+          under your own Google developer OAuth Credentials.
         </p>
 
         <div

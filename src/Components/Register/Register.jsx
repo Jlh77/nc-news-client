@@ -131,8 +131,16 @@ const Register = ({ navigation }) => {
           <p>Sign in with Google</p>
         </div>
 
+        <p>
+          <span style={{ fontWeight: "bold" }}>*NOTE*</span>: Google has not yet
+          approved this portfolio site for production, so this may not work with
+          an external google account, but does work in a development environment
+          under your own Google developer OAuth Credentials.
+        </p>
+
         <div
           className={"googleContainer facebookContainer"}
+          style={{ display: "none" }}
           onClick={facebookLogin}
         >
           <img src={facebookLogo} alt="Facebook Icon" />
