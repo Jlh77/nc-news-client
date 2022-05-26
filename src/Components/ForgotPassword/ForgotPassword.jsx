@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { scryRenderedDOMComponentsWithTag } from "react-dom/test-utils";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/User";
 
 const ForgotPassword = () => {
   const [err, setErr] = useState(null);
+  const [msg, setMsg] = useState(null);
   const [email, setEmail] = useState("");
 
   const { forgotPassword, currentUser } = useAuth();
@@ -13,9 +15,11 @@ const ForgotPassword = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     setErr(null);
+    setMsg(null);
 
     try {
-      await forgotPassword(email);
+      const res = await forgotPassword(email);
+      setMsg(res.data?.msg);
     } catch (err) {
       setErr(
         `Could not send: ${err?.response?.data?.msg || "Something went wrong."}`
@@ -28,6 +32,7 @@ const ForgotPassword = () => {
       <h1 style={{ textAlign: "center" }}>Forgot Password</h1>
 
       <p id="error">{err}</p>
+      <p id="info">{msg}</p>
 
       <form
         className="forgot-password-form"
