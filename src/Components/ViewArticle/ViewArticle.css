@@ -17,11 +17,8 @@
 }
 
 .article-content button {
-  width: 100px;
-  height: 40px;
   background-color: green;
   color: white;
   border: none;
-
   text-align: center;
 }

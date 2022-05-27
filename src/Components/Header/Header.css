@@ -30,6 +30,11 @@ header p a {
   font-size: large;
 }
 
+header button {
+  margin: auto;
+  background-color: red;
+}
+
 .navbar {
   display: flex;
   justify-content: center;

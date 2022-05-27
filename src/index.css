@@ -1,3 +1,5 @@
+/* Default styling */
+
 *,
 *::before,
 *::after {
@@ -53,6 +55,14 @@ img {
 
 button {
   cursor: pointer;
+  width: 100px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  background-color: #29b4eb;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
 }
 
 main {
@@ -69,6 +79,8 @@ main {
     transform: rotate(360deg);
   }
 }
+
+/* Reusable classes */
 
 .spinner-container {
   display: grid;
