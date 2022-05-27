@@ -1,14 +1,17 @@
 .addNewComment {
+  margin: auto;
   margin-top: 1em;
   background-color: white;
   width: 100%;
+  max-width: 80vw;
   text-align: center;
   padding: 20px;
 }
 
 .addNewComment textarea {
-  max-width: 1000px;
+  margin: auto;
   width: 50em;
+  max-width: 70vw;
   height: 80px;
   resize: none;
 }

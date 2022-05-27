@@ -3,8 +3,9 @@
   padding: 2em;
   background: white;
   margin-top: 1em;
-  max-width: 80em;
+  max-width: 90vw;
   width: 70em;
+  overflow: hidden;
 }
 
 .article-content {
