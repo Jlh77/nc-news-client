@@ -4,12 +4,14 @@ import { useAuth } from "../../contexts/User";
 import "./NewComment.css";
 
 const NewComment = ({ comments, setComments, article_id }) => {
-  const username = useAuth().currentUser.username;
+  const { currentUser } = useAuth();
+  const username = currentUser?.username;
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!currentUser) return setErr("You must be logged in to post a comment.");
     setErr(null);
     postCommentOnArticleById(article_id, { username, newComment })
       .then((postedComment) => {
@@ -40,7 +42,9 @@ const NewComment = ({ comments, setComments, article_id }) => {
   return (
     <section className="addNewComment">
       <h3>Add a new comment</h3>
-      <p>{err}</p>
+
+      {err && <p className="err">{err}</p>}
+
       <form onSubmit={handleSubmit}>
         <label htmlFor="new-comment"></label>
         <textarea
