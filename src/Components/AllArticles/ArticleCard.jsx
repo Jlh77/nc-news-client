@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 const ArticleCard = ({ article }) => {
   return (
     <article className="card">
+      <div className="card-head">
+        <h4>{article.title}</h4>
+      </div>
+      <div className="card-body">
+        <p>{`${article.body.substring(0, 160)}...`}</p>
+      </div>
       <Link to={`/articles/${article.article_id}`}>
-        <div className="card-head">
-          <h4>{article.title}</h4>
-        </div>
-        <div className="card-body">
-          <p>{`${article.body.substring(0, 180)}...`}</p>
-        </div>
+        <button className="read-more">Read More</button>
       </Link>
       <div className="card__footer">
         <div className="user">
@@ -26,7 +27,12 @@ const ArticleCard = ({ article }) => {
             </small>
           </div>
         </div>
-        <p className="votes">Votes: {article.votes}</p>
+        <div className="votes">
+          <p>Votes: {article.votes}</p>
+        </div>
+        <div className="comment-count">
+          <p>Number of Comments: {article.comment_count}</p>
+        </div>
       </div>
     </article>
   );

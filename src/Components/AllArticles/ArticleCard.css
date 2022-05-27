@@ -8,14 +8,36 @@
   background: white;
   /*background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);*/
   height: 400px;
-  padding: 20px;
 }
 
-.card__body {
-  padding: 1rem;
+.card-head {
+  padding-top: 30px;
+  height: 100px;
+  max-height: 90px;
+  font-size: larger;
+  overflow: hidden;
+}
+
+.card-head h4 {
+  text-transform: capitalize;
+  margin: auto;
+  text-align: center;
+}
+
+.card-body {
+  height: 150px;
+  max-height: 150px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  overflow: hidden;
+}
+
+.read-more {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .tag {
@@ -31,8 +53,9 @@
 }
 
 .tag-generic {
-  background: #290a0a;
+  background: rgb(99, 99, 99);
   color: #fafafa;
+  text-align: center;
 }
 /*
 .tag-coding {
@@ -40,21 +63,6 @@
   background: linear-gradient(to bottom, #2f80ed, #56ccf2);
 }
 */
-
-.card-head {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  font-size: larger;
-}
-
-.card-head h4 {
-  text-transform: capitalize;
-}
-
-.card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
 
 .card__footer {
   width: auto;
@@ -89,4 +97,28 @@
 .card a:hover {
   color: #42caff;
   text-decoration: underline;
+}
+
+.card .votes {
+  margin: 0;
+  width: 50%;
+  background-color: green;
+  color: white;
+  display: inline;
+}
+
+.card .votes p {
+  margin: 0;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  background-color: rgb(99, 99, 99);
+  color: white;
+}
+
+.card .comment-count {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
 }
