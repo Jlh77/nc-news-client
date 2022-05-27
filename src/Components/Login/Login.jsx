@@ -54,7 +54,7 @@ const Login = () => {
     <div className="login-page">
       <h1 style={{ textAlign: "center" }}>Login</h1>
 
-      <p id="error">{loginErr}</p>
+      {loginErr && <p className="err">{loginErr}</p>}
 
       <form className="login-form" action="" onSubmit={handleLogin}>
         <label htmlFor="email">Email: </label>
