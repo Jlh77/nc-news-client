@@ -23,3 +23,11 @@
   border: none;
   text-align: center;
 }
+
+.article-content :disabled {
+  background-color: green;
+  opacity: 30%;
+  color: white;
+  border: none;
+  text-align: center;
+}

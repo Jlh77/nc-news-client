@@ -8,7 +8,9 @@ import LoadingScreen from "../LoadingScreen/LoadingScreen";
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(false);
+
   const [article, setArticle] = useState({});
+  const [upvoted, setUpVoted] = useState(false);
   const { article_id } = useParams();
 
   const [postedOn, setPostedOn] = useState();
@@ -29,8 +31,10 @@ const Article = () => {
   }, [article_id]);
 
   const handleUpvote = () => {
+    setUpVoted(true);
     // A bit of optimistic rendering
     setArticle({ ...article, votes: ++article.votes });
+    console.log("here2");
     upvoteArticleById(article_id).then((updatedArticle) => {
       setArticle({ ...article, votes: updatedArticle.votes });
     });
@@ -44,8 +48,10 @@ const Article = () => {
         <h1>{article.title}</h1>
         <p>{article.body}</p>
 
-        <button onClick={handleUpvote}>Upvote</button>
-        <p>Number of Upvotes: {article.comment_count}</p>
+        <button onClick={handleUpvote} disabled={upvoted}>
+          Upvote
+        </button>
+        <p>Number of Upvotes: {article.votes}</p>
 
         <p className="author-creds">
           Written By: {article.author} in {article.topic}
