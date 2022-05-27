@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
 import { getArticleById, upvoteArticleById } from "../../utils/api";
 import CommentSection from "./CommentSection";
-import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import { useAuth } from "../../contexts/User";
 
 const Article = () => {

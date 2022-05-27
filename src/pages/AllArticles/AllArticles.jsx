@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { getArticles } from "../../utils/api";
 import ArticleCard from "./ArticleCard";
 import "./AllArticles.css";
-import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -13,10 +13,8 @@ const Articles = () => {
   const [err, setErr] = useState(false);
   const { topic } = useParams();
   const [searchParams, setSearchParams] = useSearchParams({});
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount((curr) => curr + 1);
     setSearchParams({ topic, sort_by, order });
     setIsLoading(true);
     setErr(false);

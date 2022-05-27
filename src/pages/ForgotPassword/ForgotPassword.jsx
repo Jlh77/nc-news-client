@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/User";
+import "./ForgotPassword.css";
 
 const ForgotPassword = () => {
   const [err, setErr] = useState(null);
@@ -27,17 +28,13 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="forgot-password-page">
+    <div className="forgot-password">
       <h1 style={{ textAlign: "center" }}>Forgot Password</h1>
 
-      <p id="error">{err}</p>
-      <p id="info">{msg}</p>
+      {err && <p className="err">{err}</p>}
+      {msg && <p className="msg">{msg}</p>}
 
-      <form
-        className="forgot-password-form"
-        action=""
-        onSubmit={handleForgotPassword}
-      >
+      <form action="" onSubmit={handleForgotPassword}>
         <label htmlFor="email">Your Email Address: </label>
         <br></br>
         <input

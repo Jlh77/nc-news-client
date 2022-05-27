@@ -80,12 +80,7 @@ const Login = () => {
         />
         <br></br>
         <label htmlFor="remember-me">Remember me </label>
-        <input
-          id="remember-me"
-          type="checkbox"
-          name="remember-me"
-          defaultChecked
-        />
+        <input id="remember" type="checkbox" name="remember" defaultChecked />
         <br></br>
         <button className="login-button">Login</button>
       </form>
@@ -112,7 +107,7 @@ const Login = () => {
           <span style={{ fontWeight: "bold" }}>*NOTE*</span>: Google has not yet
           approved this portfolio site for production, so this may not work with
           an external google account, but does work in a development environment
-          under your own Google developer OAuth Credentials.
+          under your own Google developer OAuth credentials.
         </p>
 
         <div

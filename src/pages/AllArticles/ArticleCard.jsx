@@ -16,7 +16,7 @@ const ArticleCard = ({ article }) => {
       <div className="card__footer">
         <div className="user">
           <div className="user__info">
-            <h5>By {article.author}</h5>
+            <h5 className="user__author">By {article.author}</h5>
             <div className={`tag tag-generic tag tag-${article.topic}`}>
               {article.topic}
             </div>

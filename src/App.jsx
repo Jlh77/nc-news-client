@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { useAuth } from "./contexts/User";
 
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import Article from "./Components/ViewArticle/ViewArticle";
-import Articles from "./Components/AllArticles/AllArticles";
-import Login from "./Components/Login/Login";
-import Register from "./Components/Register/Register";
-import Account from "./Components/Account/Account";
-import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
-import ResetPassword from "./Components/ResetPassword/ResetPassword";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Article from "./pages/ViewArticle/ViewArticle";
+import Articles from "./pages/AllArticles/AllArticles";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import Account from "./pages/Account/Account";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 
 function App() {
   const { currentUser } = useAuth();

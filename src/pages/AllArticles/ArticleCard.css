@@ -79,6 +79,11 @@
 .user {
   display: flex;
   width: 100%;
+  justify-content: center;
+}
+
+.user__info {
+  text-align: center;
 }
 
 .user__image {

@@ -89,8 +89,8 @@ main {
 }
 
 .loading-spinner {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   border: 10px solid #f3f3f3; /* Light grey */
   border-top: 10px solid #383636; /* Black */
   border-radius: 50%;
@@ -101,6 +101,16 @@ p.err {
   border: 2px solid red;
   background-color: rgba(255, 186, 186, 0.3);
   color: red;
+  padding: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: left;
+}
+
+p.msg {
+  border: 2px solid rgb(135, 150, 0);
+  background-color: rgba(255, 254, 186, 0.3);
+  color: rgb(113, 126, 0);
   padding: 5px;
   font-weight: 500;
   font-size: 16px;
