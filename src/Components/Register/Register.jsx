@@ -7,6 +7,7 @@ import facebookLogo from "../../assets/facebookLogo.png";
 
 const Register = ({ navigation }) => {
   const [submitErr, setSubmitErr] = useState(null);
+  const [submitDisabled, setSubmitDisabled] = useState(false);
 
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState(null);
@@ -21,11 +22,23 @@ const Register = ({ navigation }) => {
 
   const { register } = useAuth();
 
-  const handleEmailChange = async (e) => setEmail(e.target.value);
+  const handleEmailChange = async (e) => {
+    setEmail(e.target.value);
+    setSubmitDisabled(false);
+    setEmailErr(null);
+  };
 
-  const handleUsernameChange = async (e) => setUsername(e.target.value);
+  const handleUsernameChange = async (e) => {
+    setUsername(e.target.value);
+    setSubmitDisabled(false);
+    setUsernameErr(null);
+  };
 
-  const handlePasswordChange = async (e) => setPassword(e.target.value);
+  const handlePasswordChange = async (e) => {
+    setPassword(e.target.value);
+    setSubmitDisabled(false);
+    setPasswordErr(null);
+  };
 
   const googleLogin = () => {
     window.open(
@@ -65,12 +78,10 @@ const Register = ({ navigation }) => {
     <div className="register-page">
       <h1 style={{ textAlign: "center" }}>Register</h1>
 
-      <p id="error">{submitErr}</p>
+      {submitErr && <p className="err">{submitErr}</p>}
 
       <form className="register-form" action="" onSubmit={handleRegister}>
-        <p id="email-error" className="form-error">
-          {emailErr}
-        </p>
+        {emailErr && <p className="err">{emailErr}</p>}
 
         <label htmlFor="email">Email: </label>
         <br></br>
@@ -80,13 +91,18 @@ const Register = ({ navigation }) => {
           name="email"
           value={email}
           onChange={handleEmailChange}
+          onBlur={(e) => {
+            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+            if (!emailRegex.test(e.target.value)) {
+              setEmailErr("Please enter a valid email.");
+              setSubmitDisabled(true);
+            }
+          }}
           required
         />
         <br></br>
 
-        <p id="username-error" className="form-error">
-          {usernameErr}
-        </p>
+        {usernameErr && <p className="err">{usernameErr}</p>}
 
         <label htmlFor="username">Choose a username: </label>
         <br></br>
@@ -96,13 +112,17 @@ const Register = ({ navigation }) => {
           name="username"
           value={username}
           onChange={handleUsernameChange}
+          onBlur={(e) => {
+            if (username.length < 3) {
+              setUsernameErr("Username should be at least 3 characters long.");
+              setSubmitDisabled(true);
+            }
+          }}
           required
         />
         <br></br>
 
-        <p id="password-error" className="form-error">
-          {passwordErr}
-        </p>
+        {passwordErr && <p className="err">{passwordErr}</p>}
 
         <label htmlFor="password">Password: </label>
         <br></br>
@@ -112,10 +132,20 @@ const Register = ({ navigation }) => {
           name="password"
           value={password}
           onChange={handlePasswordChange}
+          onBlur={(e) => {
+            if (password.length < 6) {
+              setPasswordErr(
+                "Your password should be at least 6 characters long."
+              );
+              setSubmitDisabled(true);
+            }
+          }}
           required
         />
         <br></br>
-        <button className="register-button">Create Account</button>
+        <button className="register-button" disabled={submitDisabled}>
+          Create Account
+        </button>
       </form>
 
       <p>

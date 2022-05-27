@@ -3,20 +3,26 @@
   padding: 2em;
   background: white;
   margin-top: 1em;
-  max-width: 80em;
+  width: 500px;
+  max-width: 90vw;
   width: 100%;
 }
 
 .register-page form {
   margin: 0 auto;
-  width: 300px;
-  max-width: 90vw;
+  margin-top: 1em;
+  max-width: 500px;
 }
 
 .register-page p {
   margin: 0 auto;
-  width: 300px;
-  max-width: 90vw;
+  width: 500px;
+  max-width: 80vw;
+}
+
+.register-page form input {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .register-page form input[type="email"],
@@ -34,6 +40,10 @@
   font-size: 16px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.register-page button:disabled {
+  opacity: 30%;
 }
 
 .googleContainer p {
