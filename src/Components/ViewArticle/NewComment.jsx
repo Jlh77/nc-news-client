@@ -7,25 +7,23 @@ const NewComment = ({ comments, setComments, article_id }) => {
   const username = useAuth().currentUser.username;
   const [newComment, setNewComment] = useState("");
   const [err, setErr] = useState(null);
-  const [tempNewCommentId, settempNewCommentId] = useState(0);
 
   const handleSubmit = (e) => {
-    settempNewCommentId((currId) => currId + 1);
-    setErr(null);
     e.preventDefault();
-    setComments((currComments) => {
-      return [
-        {
-          author: username,
-          body: newComment,
-          comment_id: `new${tempNewCommentId}`,
-        },
-        ...currComments,
-      ];
-    });
+    setErr(null);
     postCommentOnArticleById(article_id, { username, newComment })
       .then((postedComment) => {
         setNewComment("");
+        setComments((currComments) => {
+          return [
+            {
+              author: username,
+              body: newComment,
+              comment_id: postedComment.comment_id,
+            },
+            ...currComments,
+          ];
+        });
       })
       .catch((err) => {
         setErr(
@@ -53,6 +51,7 @@ const NewComment = ({ comments, setComments, article_id }) => {
           onChange={(e) => {
             setNewComment(e.target.value);
           }}
+          required
         />
         <div className="submit-wrapper">
           <button>Add comment</button>

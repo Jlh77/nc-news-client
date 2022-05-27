@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import { getCommentsByArticleId, deleteCommentById } from "../../utils/api";
 import "./CommentSection.css";
 import NewComment from "./NewComment";
+import { useAuth } from "../../contexts/User";
 
 const CommentSection = ({ article }) => {
   const [comments, setCommments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     getCommentsByArticleId(article.article_id).then((comments) => {
@@ -36,14 +39,23 @@ const CommentSection = ({ article }) => {
         {comments.map((comment) => {
           return (
             <div key={comment.comment_id} className="comment">
-              <h4>{comment.author}</h4> {comment.body}
-              <button
-                onClick={(e) => {
-                  deleteComment(e, comment.comment_id);
-                }}
-              >
-                Delete
-              </button>
+              <img
+                src={
+                  "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+                }
+                alt="default_avatar"
+              />
+              <h4>{comment.author}</h4>
+              <p>{comment.body}</p>
+              {currentUser?.username === comment.author ? (
+                <button
+                  onClick={(e) => {
+                    deleteComment(e, comment.comment_id);
+                  }}
+                >
+                  Delete
+                </button>
+              ) : null}
             </div>
           );
         })}

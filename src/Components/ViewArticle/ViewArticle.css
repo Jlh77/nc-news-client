@@ -4,4 +4,24 @@
   background: white;
   margin-top: 1em;
   max-width: 80em;
+  width: 70em;
+}
+
+.article-content {
+  margin: auto;
+  max-width: 40em;
+}
+
+.article-content h1 {
+  text-align: center;
+}
+
+.article-content button {
+  width: 100px;
+  height: 40px;
+  background-color: green;
+  color: white;
+  border: none;
+
+  text-align: center;
 }

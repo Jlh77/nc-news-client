@@ -53,7 +53,6 @@ const Register = ({ navigation }) => {
       await register(email, username, password);
     } catch (err) {
       // if register fails
-      console.log(err.response.data);
       setSubmitErr(
         `Failed to create account: ${
           err?.response?.data?.msg || "Something went wrong."

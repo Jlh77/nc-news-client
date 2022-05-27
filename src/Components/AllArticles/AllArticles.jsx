@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { getArticles } from "../../utils/api";
 import ArticleCard from "./ArticleCard";
 import "./AllArticles.css";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -66,10 +67,10 @@ const Articles = () => {
 
   if (isLoading)
     return (
-      <main>
+      <>
         {topJsx}
-        <p>Loading...</p>
-      </main>
+        <LoadingScreen height={"50vh"} />
+      </>
     );
   if (err) return <p>Oops! Something went wrong, please try again.</p>;
   if (!articles.length)

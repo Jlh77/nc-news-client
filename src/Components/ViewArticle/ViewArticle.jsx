@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./ViewArticle.css";
 import { getArticleById, upvoteArticleById } from "../../utils/api";
 import CommentSection from "./CommentSection";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const Article = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,28 +36,31 @@ const Article = () => {
     });
   };
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <LoadingScreen height={"85vh"} />;
   if (err) return <p>This article does not exist, please check the URL.</p>;
   return (
-    <>
-      <article className="article">
+    <div className="article">
+      <article className="article-content">
         <h1>{article.title}</h1>
         <p>{article.body}</p>
-        <p>
+
+        <button onClick={handleUpvote}>Upvote</button>
+        <p>Number of Upvotes: {article.comment_count}</p>
+
+        <p className="author-creds">
           Written By: {article.author} in {article.topic}
         </p>
-        <section className="comments">
-          Comment Count: {article.comment_count} Votes: {article.votes}{" "}
-          <button onClick={handleUpvote}>Upvote</button>
-        </section>
         <div>
           Posted on: {postedOn.getDate()}/{postedOn.getMonth()}/
           {postedOn.getFullYear()}
         </div>
+        <section className="comment-count">
+          Comment Count: {article.comment_count}
+        </section>
       </article>
 
       <CommentSection article={article}></CommentSection>
-    </>
+    </div>
   );
 };
 export default Article;

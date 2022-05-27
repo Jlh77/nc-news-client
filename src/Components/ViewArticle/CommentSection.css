@@ -1,16 +1,25 @@
 .comment-section {
   background-color: white;
   padding: 2em;
-  max-width: 80em;
+  max-width: 50em;
+  margin: auto;
 }
 
-.comment-section .comment {
-  text-align: ce;
+/* .comment-section .comment {
+} */
+
+.comment-section .comment img {
+  border-radius: 1000px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  display: inline-block;
 }
 
 .comment-section .comment h4 {
   margin-bottom: 1em;
-  margin-top: 1em;
+  margin-top: 2em;
+  display: inline-block;
 }
 
 .comment-section button {
