@@ -43,7 +43,7 @@ header button {
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-decoration: none;
   padding: 0;
   flex-wrap: wrap;
