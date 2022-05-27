@@ -68,7 +68,7 @@ const ResetPassword = () => {
           value={password}
           onChange={handlePassword}
           onBlur={(e) => {
-            if (confirmPassword !== password) {
+            if (confirmPassword !== password && confirmPassword.length) {
               setConfirmErr("Password and Confirm Password do not match.");
               setSubmitDisabled(true);
             }
@@ -95,7 +95,7 @@ const ResetPassword = () => {
           onChange={handleConfirmPassword}
           onBlur={(e) => {
             if (confirmPassword !== password) {
-              setConfirmErr("Password and Confirm Password do not mattch");
+              setConfirmErr("Password and Confirm Password do not match.");
               setSubmitDisabled(true);
             }
           }}
